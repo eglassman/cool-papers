@@ -31,19 +31,19 @@ and test.
 
 ### Contributions
 
-• We confirm empirically on several datasets that input
+- We confirm empirically on several datasets that input
 gradient explanations match state of the art sample-based
 explanations (e.g. LIME [Ribeiro, 2016]).
-• Given annotations about incorrect explanations for particular
+- Given annotations about incorrect explanations for particular
 inputs, we efficiently optimize the classifier to learn
 alternate explanations (to be right for better reasons).
-• When annotations are not available, we sequentially discover
+- When annotations are not available, we sequentially discover
 classifiers with similar accuracies but qualitatively
 different decision boundaries for domain experts to inspect
 for validity.
 
 ### Datasets
 
-• 20 Newsgroups
-• Iris-Cancer
-• Decoy MNIST
+- 20 Newsgroups
+- Iris-Cancer
+- Decoy MNIST
