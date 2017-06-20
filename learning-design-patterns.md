@@ -17,3 +17,4 @@ a probabilistic formal grammar over the exemplars"
 ### Tools used
 
 Bayesian Model Merging, an iterative structure learning technique which formulates grammar induction as Bayesian inference
+
