@@ -2,49 +2,67 @@
 
 ## Inference
 
+### Logical
+
 "Steps in reasoning, moving from premises to conclusions" [6]
 
-## Rational Inference / Reasoning
-
-### deductive
+#### deductive
 
 - "Top-down logic" [5]
 - "Proceeds from general premises to a specific conclusion" [5]
+- "the premises do not guarantee the conclusion" [7]
 - "Deriving logical conclusions from premises known or assumed to be true, [using] the laws of valid inference being studied in logic" [6]
 
 Most famous, oldest author: Aristotle
 
-#### Example [5]:
+##### Example [5]:
 - (Premise 1) All men are mortal.
 - (Premise 2) Socrates is a man.
 - (Conclusion) Therefore, Socrates is mortal.
 
-### inductive
+#### inductive
 
 - "Bottom-up logic" [5]
 - "The process of reaching a general conclusion from specific examples." [1]
 - "Inference from particular premises to [a] universal conclusion" [6]
 - "Process by which a conclusion is inferred from multiple observations" [6]
 
-#### Examples
+##### Learning fromExamples
 
 Examples can be all positive, or a mixture of positive and negative. Negative examples constrain the set of models that are consistent with the examples [1].
 
-#### Inductive bias
+##### Inductive bias
 "Explicit or implicit assumption(s) about what kind of model is wanted." [1]
 
-#### Conclusion truth/Model accuracy
+##### Conclusion truth/Model accuracy
 
 Examples are generalized into a model that is then used to make predictions on new, previously unseen inputs. (Models === conclusions)
 
 - "The conclusion may be correct or incorrect, or correct to within a certain degree of accuracy, or correct in certain situations." [6]
 - "Conclusions inferred from multiple observations may be tested by additional observations." [6]
 
-##### Inductive Learning Hypothesis
+###### Inductive Learning Hypothesis
 "Any hypothesis found to approximate the target function well over a sufficiently large set of training examples will also approximate the target function well over other unobserved examples." [1]
 
+#### abductive
 
-### probabilistic
+- "starts with an observation then seeks to find the simplest and most likely explanation" [7]
+- "inference to the best explanation" [7]
+- "the use of a known rule to explain an observation [but] can lead to false conclusions if other rules explaining the observation are not taken into account" [7]
+
+
+##### Examples
+
+- (Known rule) if it rains, the grass is wet
+- (Observation) the grass is wet
+- (Explanation by abduction) it has rained
+
+##### Uses
+- Employed frequently by diagnostic expert systems
+
+### Human
+
+### Statistical
 
 ## Concept Learning
 
@@ -143,6 +161,7 @@ Most rules of lexical grammars are context-free, with a few exceptions, e.g., "c
 [4] https://en.wikibooks.org/wiki/Introduction_to_Programming_Languages/Grammars
 [5] http://whatis.techtarget.com/definition/deductive-reasoning
 [6] https://en.wikipedia.org/wiki/Inference
+[7] https://en.wikipedia.org/wiki/Abductive_reasoning
 
 # Other Helpful Resources Uncited Above
 
