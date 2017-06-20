@@ -1,17 +1,50 @@
 # Definitions
 
-## Inductive inference / reasoning
-"The process of reaching a general conclusion from specific examples." [1]
+## Inference
 
-Examples are generalized into a model that is then used to make predictions on new, previously unseen inputs.
+"Steps in reasoning, moving from premises to conclusions" [6]
+
+## Rational Inference / Reasoning
+
+### deductive
+
+- "Top-down logic" [5]
+- "Proceeds from general premises to a specific conclusion" [5]
+- "Deriving logical conclusions from premises known or assumed to be true, [using] the laws of valid inference being studied in logic" [6]
+
+Most famous, oldest author: Aristotle
+
+#### Example [5]:
+- (Premise 1) All men are mortal.
+- (Premise 2) Socrates is a man.
+- (Conclusion) Therefore, Socrates is mortal.
+
+### inductive
+
+- "Bottom-up logic" [5]
+- "The process of reaching a general conclusion from specific examples." [1]
+- "Inference from particular premises to [a] universal conclusion" [6]
+- "Process by which a conclusion is inferred from multiple observations" [6]
+
+#### Examples
 
 Examples can be all positive, or a mixture of positive and negative. Negative examples constrain the set of models that are consistent with the examples [1].
 
-## Inductive Learning Hypothesis
+#### Inductive bias
+"Explicit or implicit assumption(s) about what kind of model is wanted." [1]
+
+#### Conclusion truth/Model accuracy
+
+Examples are generalized into a model that is then used to make predictions on new, previously unseen inputs. (Models === conclusions)
+
+- "The conclusion may be correct or incorrect, or correct to within a certain degree of accuracy, or correct in certain situations." [6]
+- "Conclusions inferred from multiple observations may be tested by additional observations." [6]
+
+##### Inductive Learning Hypothesis
 "Any hypothesis found to approximate the target function well over a sufficiently large set of training examples will also approximate the target function well over other unobserved examples." [1]
 
-## Inductive bias
-"Explicit or implicit assumption(s) about what kind of model is wanted." [1]
+
+### probabilistic
 
 ## Concept Learning
 
@@ -62,9 +95,19 @@ Most common form is Backus-Naur Form (BNF), which is defined by tuple of four el
 - T: a set of tokens, the vocabulary of the language, the smallest unit of syntax, e.g., *while*, *for*, +, (
 - N: set of nonterminals, which are not part of the language, can be replaced with other nonterminals or tokens, depending on the production rules, enclosed in <> to distinguish them from terminals
 - P: production rules, define what non-terminals can be turned into, e.g.
-
 ```
 <exp> ::= <exp> "+" <exp> | <exp> "*" <exp> | "(" <exp> ")" | "a" | "b" | "c"
+```
+- S: start symbol, a special nonterminal from which all syntactically valid programs are produced from
+
+Example grammar for all sums and products of names a, b, and c:
+```
+<exp> ::= <exp> "+" <exp>
+<exp> ::= <exp> "*" <exp>
+<exp> ::= "(" <exp> ")"
+<exp> ::= "a"
+<exp> ::= "b"
+<exp> ::= "c"
 ```
 
 ### Context-free grammar
@@ -98,6 +141,8 @@ Most rules of lexical grammars are context-free, with a few exceptions, e.g., "c
 [2] https://en.wikipedia.org/wiki/Concept_learning#Modern_psychological_theories
 [3] https://en.wikipedia.org/wiki/Poverty_of_the_stimulus
 [4] https://en.wikibooks.org/wiki/Introduction_to_Programming_Languages/Grammars
+[5] http://whatis.techtarget.com/definition/deductive-reasoning
+[6] https://en.wikipedia.org/wiki/Inference
 
 # Other Helpful Resources Uncited Above
 
