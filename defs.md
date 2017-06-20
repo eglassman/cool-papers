@@ -27,6 +27,15 @@ Assumptions [2]:
 - "people categorize based on one or more central examples of a given category followed by a penumbra of decreasingly typical examples."
 	- "people do not categorize based on a list of things that all correspond to a definition, but rather on a hierarchical inventory based on semantic similarity to the central example(s)."
 
+### Exemplar
+Assumptions [2]:
+- people "store examples verbatim."
+
+Exemplar models require two measures [2]:
+- similarity between exemplars
+- rules to determine group membership
+
+
 ## Grammar induction
 
 ## Context-free grammar
