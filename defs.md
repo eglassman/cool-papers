@@ -56,6 +56,16 @@ Exemplar models require two measures [2]:
 		1. lexing/tokenizing sequence of characters into a sequence of tokens
 		2. parsing the sequence of tokens into a tree
 
+### Notation [4]
+
+Most common form is Backus-Naur Form (BNF), which is defined by tuple of four elements: (T, N, P, S).
+- T: a set of tokens, the vocabulary of the language, the smallest unit of syntax, e.g., *while*, *for*, +, (
+- N: set of nonterminals, which are not part of the language, can be replaced with other nonterminals or tokens, depending on the production rules, enclosed in <> to distinguish them from terminals
+- P: production rules, define what non-terminals can be turned into, e.g.
+
+```
+<exp> ::= <exp> "+" <exp> | <exp> "*" <exp> | "(" <exp> ")" | "a" | "b" | "c"
+```
 
 ### Context-free grammar
 
