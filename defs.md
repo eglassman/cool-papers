@@ -2,6 +2,12 @@
 
 ## Inference
 
+Can refer to: [6]
+1. the conclusion reached from evidence and reasoning
+2. the process of reaching that conclusion
+
+
+
 ### Logical
 
 "Steps in reasoning, moving from premises to conclusions" [6]
@@ -35,17 +41,34 @@ Examples can be all positive, or a mixture of positive and negative. Negative ex
 ##### Inductive bias
 "Explicit or implicit assumption(s) about what kind of model is wanted." [1]
 
-##### Conclusion truth/Model accuracy
+##### Results Correctness
 
-Examples are generalized into a model that is then used to make predictions on new, previously unseen inputs. (Models === conclusions)
-
-- "The conclusion may be correct or incorrect, or correct to within a certain degree of accuracy, or correct in certain situations." [6]
-- "Conclusions inferred from multiple observations may be tested by additional observations." [6]
+There are two main types of results for inductive inference:
+1. a conclusion [6]
+	- Truth value:
+		- may or may not be true
+		- true ~X% of the time
+		- may only be true when certain preconditions are met
+	- Testing
+		- "Conclusions inferred from multiple observations may be tested by additional observations."
+2. a model: 
+	- Examples are generalized into a model that is then used to make predictions on new, previously unseen inputs. 
+	- Learned models may or may not capture what the human in the loop wanted. - Models could be:
+		- a category
+		- a pattern, like the patterns PROSE learns to extract data from large files
+		- a transformation or program, like the transformations Rafazer learns over ASTs
 
 ###### Inductive Learning Hypothesis
 "Any hypothesis found to approximate the target function well over a sufficiently large set of training examples will also approximate the target function well over other unobserved examples." [1]
 
-#### abductive
+#### Informal and Incorrect Logic (Fallacies)
+
+Catalogued by: [6]
+	- cognitive psychologists
+	- philosophers
+since humans have biases that favor certain types of fallacies
+
+##### abductive
 
 *"formally equivalent to the logical fallacy of affirming the consequent"* [7]
 
@@ -53,7 +76,7 @@ Examples are generalized into a model that is then used to make predictions on n
 - "inference to the best explanation" [7]
 - "the use of a known rule to explain an observation [but] can lead to false conclusions if other rules explaining the observation are not taken into account" [7]
 
-##### Examples
+###### Examples
 
 1. Qualified success:
 
@@ -70,7 +93,7 @@ Examples are generalized into a model that is then used to make predictions on n
 	- (Observation) Bill Gates is rich
 	- (Explanation by abduction) Bill Gates owns Fort Knox [clearly false]
 
-##### Uses
+###### Uses
 - Employed frequently by diagnostic expert systems
 
 ### Human
@@ -84,9 +107,11 @@ Examples are generalized into a model that is then used to make predictions on n
 ### Statistical
 
 - Mathematical methods for drawing "conclusions in the presence of uncertainty" [6]
-- A generalization of the det
+- A generalization of deterministic reasoning [6]
 
 ## Concept Learning
+
+Concepts can be categories, labels (e.g., PROSE extractions), or procedures (e.g., PROSE transformations).
 
 ### Classical view (philosophy)
 "a process of abstraction, data compression, simplification, and summarization" [2]
