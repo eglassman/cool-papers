@@ -45,25 +45,6 @@ Examples are generalized into a model that is then used to make predictions on n
 ###### Inductive Learning Hypothesis
 "Any hypothesis found to approximate the target function well over a sufficiently large set of training examples will also approximate the target function well over other unobserved examples." [1]
 
-~~#### abductive
-
-- "starts with an observation then seeks to find the simplest and most likely explanation" [7]
-- "inference to the best explanation" [7]
-- "the use of a known rule to explain an observation [but] can lead to false conclusions if other rules explaining the observation are not taken into account" [7]
-- "formally equivalent to the logical fallacy of affirming the consequent"
-
-##### Examples
-
-- (Known rule) if it rains, the grass is wet
-- (Observation) the grass is wet
-- (Explanation by abduction) it has rained
-- (Failure mode: not taking other rules into account)
-	- (Other rule) if the sprinklers were recently on, the grass is wet
-	- (Alternative explanation) the sprinklers were recently on
-
-##### Uses
-- Employed frequently by diagnostic expert systems~~
-
 ### Human
 
 ### Statistical
@@ -158,16 +139,43 @@ Most rules of lexical grammars are context-free, with a few exceptions, e.g., "c
 ## Poverty of the Stimulus
 
 
+# References
 
-[1] http://www2.cs.uregina.ca/~dbd/cs831/notes/ml/2_inference.html
-[2] https://en.wikipedia.org/wiki/Concept_learning#Modern_psychological_theories
-[3] https://en.wikipedia.org/wiki/Poverty_of_the_stimulus
-[4] https://en.wikibooks.org/wiki/Introduction_to_Programming_Languages/Grammars
-[5] http://whatis.techtarget.com/definition/deductive-reasoning
-[6] https://en.wikipedia.org/wiki/Inference
-[7] https://en.wikipedia.org/wiki/Abductive_reasoning
+1. http://www2.cs.uregina.ca/~dbd/cs831/notes/ml/2_inference.html
+2. https://en.wikipedia.org/wiki/Concept_learning#Modern_psychological_theories
+3. https://en.wikipedia.org/wiki/Poverty_of_the_stimulus
+4. https://en.wikibooks.org/wiki/Introduction_to_Programming_Languages/Grammars
+5. http://whatis.techtarget.com/definition/deductive-reasoning
+6. https://en.wikipedia.org/wiki/Inference
+7. https://en.wikipedia.org/wiki/Abductive_reasoning
 
 # Other Helpful Resources Uncited Above
 
 #### Unsupervised Parsing and Grammar Induction
 https://nlp.stanford.edu/projects/up-gi.shtml
+
+# Removed sections
+
+## Inference
+
+### Logical
+
+#### abductive
+
+*"formally equivalent to the logical fallacy of affirming the consequent"* [7]
+
+- "starts with an observation then seeks to find the simplest and most likely explanation" [7]
+- "inference to the best explanation" [7]
+- "the use of a known rule to explain an observation [but] can lead to false conclusions if other rules explaining the observation are not taken into account" [7]
+
+##### Examples
+
+- (Known rule) if it rains, the grass is wet
+- (Observation) the grass is wet
+- (Explanation by abduction) it has rained
+- (Failure mode: not taking other rules into account)
+	- (Other rule) if the sprinklers were recently on, the grass is wet
+	- (Alternative explanation) the sprinklers were recently on
+
+##### Uses
+- Employed frequently by diagnostic expert systems
