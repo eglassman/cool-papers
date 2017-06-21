@@ -83,7 +83,8 @@ Examples are generalized into a model that is then used to make predictions on n
 
 ### Statistical
 
-Mathematical methods for drawing "conclusions in the presence of uncertainty" [6]
+- Mathematical methods for drawing "conclusions in the presence of uncertainty" [6]
+- A generalization of the det
 
 ## Concept Learning
 
@@ -178,6 +179,7 @@ Most rules of lexical grammars are context-free, with a few exceptions, e.g., "c
 
 ## Poverty of the Stimulus
 
+This is an argument for innate human knowledge of grammatical rules, since we learn correct grammar from what linguists & cognitive psychologists believe is a poverty of examples.
 
 # References
 
