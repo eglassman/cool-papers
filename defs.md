@@ -6,7 +6,7 @@
 
 "Steps in reasoning, moving from premises to conclusions" [6]
 
-#### deductive
+#### Deductive
 
 - "Top-down logic" [5]
 - "Proceeds from general premises to a specific conclusion" [5]
@@ -21,14 +21,14 @@ Most famous, oldest author: Aristotle
 - (Premise 2) Socrates is a man.
 - (Conclusion) Therefore, Socrates is mortal.
 
-#### inductive
+#### Inductive
 
 - "Bottom-up logic" [5]
 - "The process of reaching a general conclusion from specific examples." [1]
 - "Inference from particular premises to [a] universal conclusion" [6]
 - "Process by which a conclusion is inferred from multiple observations" [6]
 
-##### Learning fromExamples
+##### Learning from Examples
 
 Examples can be all positive, or a mixture of positive and negative. Negative examples constrain the set of models that are consistent with the examples [1].
 
@@ -45,9 +45,45 @@ Examples are generalized into a model that is then used to make predictions on n
 ###### Inductive Learning Hypothesis
 "Any hypothesis found to approximate the target function well over a sufficiently large set of training examples will also approximate the target function well over other unobserved examples." [1]
 
+#### abductive
+
+*"formally equivalent to the logical fallacy of affirming the consequent"* [7]
+
+- "starts with an observation then seeks to find the simplest and most likely explanation" [7]
+- "inference to the best explanation" [7]
+- "the use of a known rule to explain an observation [but] can lead to false conclusions if other rules explaining the observation are not taken into account" [7]
+
+##### Examples
+
+1. Qualified success:
+
+	- (Known rule) if it rains, the grass is wet
+	- (Observation) the grass is wet
+	- (Explanation by abduction) it has rained
+	- (Failure mode 1: not taking other rules into account)
+		- (Other rule) if the sprinklers were recently on, the grass is wet
+		- (Alternative explanation) the sprinklers were recently on
+
+2. Failure: affirming the consequent fallacy
+
+	- (Known rule) if someone owns Fort Knox, then they are rich
+	- (Observation) Bill Gates is rich
+	- (Explanation by abduction) Bill Gates owns Fort Knox [clearly false]
+
+##### Uses
+- Employed frequently by diagnostic expert systems
+
 ### Human
 
+"how humans draw conclusions" [6]
+
+#### Fields where primary and secondary research occur [6]
+1. Primary: Studied in cognitive psychology
+2. Secondary: Automated inference systems that *emulate* human inference are studied/composed in AI
+
 ### Statistical
+
+Mathematical methods for drawing "conclusions in the presence of uncertainty" [6]
 
 ## Concept Learning
 
@@ -62,6 +98,10 @@ Assumptions [2]:
 - "people abstract out the central tendency (or prototype) of the examples experienced and use this as a basis for their categorization decisions." 
 - "people categorize based on one or more central examples of a given category followed by a penumbra of decreasingly typical examples."
 	- "people do not categorize based on a list of things that all correspond to a definition, but rather on a hierarchical inventory based on semantic similarity to the central example(s)."
+
+#### Prototypical networks
+
+See "Prototypical Networks for Few-shot Learning" https://arxiv.org/pdf/1703.05175.pdf
 
 ### Exemplar
 Assumptions [2]:
@@ -132,9 +172,9 @@ Most rules of lexical grammars are context-free, with a few exceptions, e.g., "c
 
 ## Version space
 
-### learning
+### Learning
 
-### algebra
+### Algebra
 
 ## Poverty of the Stimulus
 
@@ -160,22 +200,4 @@ https://nlp.stanford.edu/projects/up-gi.shtml
 
 ### Logical
 
-#### abductive
 
-*"formally equivalent to the logical fallacy of affirming the consequent"* [7]
-
-- "starts with an observation then seeks to find the simplest and most likely explanation" [7]
-- "inference to the best explanation" [7]
-- "the use of a known rule to explain an observation [but] can lead to false conclusions if other rules explaining the observation are not taken into account" [7]
-
-##### Examples
-
-- (Known rule) if it rains, the grass is wet
-- (Observation) the grass is wet
-- (Explanation by abduction) it has rained
-- (Failure mode: not taking other rules into account)
-	- (Other rule) if the sprinklers were recently on, the grass is wet
-	- (Alternative explanation) the sprinklers were recently on
-
-##### Uses
-- Employed frequently by diagnostic expert systems
