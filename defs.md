@@ -6,11 +6,13 @@ Can refer to: [6]
 1. the conclusion reached from evidence and reasoning
 2. the process of reaching that conclusion
 
-
-
 ### Logical
 
 "Steps in reasoning, moving from premises to conclusions" [6]
+
+- May rely on a formal system of logic common to CS, math, physics, and linguistis: first-order logic / first-order predicate calculus / predicate logic. 1st order logic is distinct from the the simpler propositional logic because it allows for predicates and quantification. First order logic, as compared to propositional logic: [9]
+	- "A predicate takes an entity or entities in the domain of discourse as input and outputs either True or False. Consider the two sentences "Socrates is a philosopher" and "Plato is a philosopher". In propositional logic, these sentences are viewed as being unrelated and might be denoted, for example, by variables such as p and q. The predicate "is a philosopher" occurs in both sentences, which have a common structure of "a is a philosopher". The variable a is instantiated as "Socrates" in the first sentence and is instantiated as "Plato" in the second sentence. While first-order logic allows for the use of predicates, such as "is a philosopher" in this example, propositional logic does not."
+	- "PROLOG programs are sets of first-order rules" [10]
 
 #### Deductive
 
@@ -29,10 +31,15 @@ Most famous, oldest author: Aristotle
 
 #### Inductive
 
+
+- "induction is just the inverse of deduction" [10]
 - "Bottom-up logic" [5]
 - "The process of reaching a general conclusion from specific examples." [1]
 - "Inference from particular premises to [a] universal conclusion" [6]
 - "Process by which a conclusion is inferred from multiple observations" [6]
+
+Connection to ML:
+- "in general, machine learning involves building theories that explain the observed data" [10]
 
 ##### Learning from Examples
 
@@ -40,6 +47,11 @@ Examples can be all positive, or a mixture of positive and negative. Negative ex
 
 ##### Inductive bias
 "Explicit or implicit assumption(s) about what kind of model is wanted." [1]
+
+###### Inductive Learning Hypothesis
+- "Any hypothesis found to approximate the target function well over a sufficiently large set of training examples will also approximate the target function well over other unobserved examples." [1]
+- "Given some data D and some background knowledge B, learning can be described as generating a hypothesis h that, together with B, explains D." [10]
+- "a logic program, i.e. a definite clause program" [8]
 
 ##### Results Correctness
 
@@ -58,8 +70,10 @@ There are two main types of results for inductive inference:
 		- a pattern, like the patterns PROSE learns to extract data from large files
 		- a transformation or program, like the transformations Rafazer learns over ASTs
 
-###### Inductive Learning Hypothesis
-"Any hypothesis found to approximate the target function well over a sufficiently large set of training examples will also approximate the target function well over other unobserved examples." [1]
+###### Inductive Logic Programming
+- "designed to learn first-order rules" [10]
+- "concerned with finding a hypothesis H from a set of positive and negative examples P and N" [8]
+
 
 #### Informal and Incorrect Logic (Fallacies)
 
@@ -108,6 +122,10 @@ since humans have biases that favor certain types of fallacies
 
 - Mathematical methods for drawing "conclusions in the presence of uncertainty" [6]
 - A generalization of deterministic reasoning [6]
+
+#### Probabilistic inductive logic programming / probabilistic logic learning / statistical relational learning 
+
+"addresses one of the central questions of artificial intelligence: the integration of probabilistic reasoning with first order logic representations and machine learning" [8]
 
 ## Concept Learning
 
@@ -215,6 +233,9 @@ This is an argument for innate human knowledge of grammatical rules, since we le
 5. http://whatis.techtarget.com/definition/deductive-reasoning
 6. https://en.wikipedia.org/wiki/Inference
 7. https://en.wikipedia.org/wiki/Abductive_reasoning
+8. https://people.csail.mit.edu/kersting/ecmlpkdd05_pilp/pilp.pdf
+9. https://en.wikipedia.org/wiki/First-order_logic
+10. http://www.cogsys.wiai.uni-bamberg.de/teaching/ss05/ml/slides/cogsysII-6.pdf
 
 # Other Helpful Resources Uncited Above
 
