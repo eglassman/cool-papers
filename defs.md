@@ -1,12 +1,12 @@
 # Definitions
 
-## Inference
+## Inference (Reasoning)
 
 Can refer to: [6]
 1. the conclusion reached from evidence and reasoning
 2. the process of reaching that conclusion
 
-### Logical
+### Logical reasoning
 
 "Steps in reasoning, moving from premises to conclusions" [6]
 
@@ -29,31 +29,45 @@ Most famous, oldest author: Aristotle
 - (Premise 2) Socrates is a man.
 - (Conclusion) Therefore, Socrates is mortal.
 
-#### Inductive
+##### Deductive programming [11]
+- predominant in "classical software engineering and algorithm design" [11]
+	- "One aspires a general problem description as starting point from which a program or algorithm is developed as a particular solution." [11]
+- "subsume[s] established software development methods" [11]
+- power methods that "partly automatize the programming and verification process" such as (below) have a "common deductive foundation" [11]
+	- automatic code generation from UML diagrams
+	- (deductive) program synthesis to generate algorithmic parts
+	- program transformation and refactoring to optimize programs
+	- verifying programs via
+		- theorem proving
+		- model checking
+		- static analysis
 
+#### Inductive
 
 - "induction is just the inverse of deduction" [10]
 - "Bottom-up logic" [5]
 - "The process of reaching a general conclusion from specific examples." [1]
 - "Inference from particular premises to [a] universal conclusion" [6]
 - "Process by which a conclusion is inferred from multiple observations" [6]
+- "philosophical (i.e. suggesting a theory to explain observed facts)" not "mathematical (i.e. proving a property for all members of a well-ordered set)"
 
 Connection to ML:
 - "in general, machine learning involves building theories that explain the observed data" [10]
 
 ##### Learning from Examples
 
-Examples can be all positive, or a mixture of positive and negative. Negative examples constrain the set of models that are consistent with the examples [1].
+- Examples can be all positive, or a mixture of positive and negative. Negative examples constrain the set of models that are consistent with the examples [1].
 
 ##### Inductive bias
 "Explicit or implicit assumption(s) about what kind of model is wanted." [1]
 
-###### Inductive Learning Hypothesis
+##### Inductive Learning Hypothesis
 - "Any hypothesis found to approximate the target function well over a sufficiently large set of training examples will also approximate the target function well over other unobserved examples." [1]
 - "Given some data D and some background knowledge B, learning can be described as generating a hypothesis h that, together with B, explains D." [10]
+	- "the hypothesis H together with the background theory B should cover all positive and none of the negative examples" [8]
 - "a logic program, i.e. a definite clause program" [8]
 
-##### Results Correctness
+##### Hypothesis Correctness
 
 There are two main types of results for inductive inference:
 1. a conclusion [6]
@@ -70,10 +84,63 @@ There are two main types of results for inductive inference:
 		- a pattern, like the patterns PROSE learns to extract data from large files
 		- a transformation or program, like the transformations Rafazer learns over ASTs
 
-###### Inductive Logic Programming
+##### Inductive Logic Programming
+- "a subfield of machine learning" [12]
+- "uses logic programming as a uniform representation for examples, background knowledge and hypotheses" [12]
 - "designed to learn first-order rules" [10]
 - "concerned with finding a hypothesis H from a set of positive and negative examples P and N" [8]
+- the ability to "provide declarative background knowledge to the learning engine is viewed as one of the strengths of inductive logic programming" [8]
+- "inductive machine learning in a logical setting" [12]
+- "positive examples + negative examples + background knowledge ⇒ hypothesis" [12]
+- "Given an encoding of the known background knowledge and a set of examples represented as a logical database of facts, an ILP system will derive a hypothesised logic program which entails all the positive and none of the negative examples." [12]
 
+Uses
+- "particularly useful in bioinformatics and natural language processing" [12]
+
+##### Inductive programming (IP)
+- "emerging field" [11]
+- reasoning methods & theory for [11]
+	- computer programming
+	- algorithm design
+	- software development
+
+###### Inductive program synthesis
+- "major subfield" of IP [11]
+- "the (semi-)automatic construction of programs from exemplary behavior" [11]
+- "not a unified research field until today but scattered over several different established research fields" [11]
+	- spans/intersects with many fields such as [11]
+		- machine learning
+		- artificial intelligence
+		- programming
+		- software engineering
+		- algorithms research
+		- inductive logic programming
+		- genetic programming
+		- functional programming
+	- "goes beyond each of these fields in one or the other aspect[;] therefore [it] is a research field in its own right" [11]
+		- e.g., goes beyond classical machine learning because
+			- focused on "learn[ing] general programs including loops and recursion"
+			- not just learning "(mostly nonrecursive) models or classifiers in restricted representational frameworks" such as
+				- decision trees
+				- neural networks
+	- these disparate communities (and jargon?) "impedes an exchange of theory and techniques and ... progress of [IP]" [11]
+
+### Statistical
+
+- Mathematical methods for drawing "conclusions in the presence of uncertainty" [6]
+- A generalization of deterministic reasoning [6]
+
+#### Probabilistic inductive logic programming / probabilistic logic learning / statistical relational learning 
+
+"addresses one of the central questions of artificial intelligence: the integration of probabilistic reasoning with first order logic representations and machine learning" [8]
+
+### Human
+
+"how humans draw conclusions" [6]
+
+#### Fields where primary and secondary research occur [6]
+1. Primary: Studied in cognitive psychology
+2. Secondary: Automated inference systems that *emulate* human inference are studied/composed in AI
 
 #### Informal and Incorrect Logic (Fallacies)
 
@@ -110,31 +177,14 @@ since humans have biases that favor certain types of fallacies
 ###### Uses
 - Employed frequently by diagnostic expert systems
 
-### Human
+## Machine Learning
 
-"how humans draw conclusions" [6]
+### Category Learning
 
-#### Fields where primary and secondary research occur [6]
-1. Primary: Studied in cognitive psychology
-2. Secondary: Automated inference systems that *emulate* human inference are studied/composed in AI
-
-### Statistical
-
-- Mathematical methods for drawing "conclusions in the presence of uncertainty" [6]
-- A generalization of deterministic reasoning [6]
-
-#### Probabilistic inductive logic programming / probabilistic logic learning / statistical relational learning 
-
-"addresses one of the central questions of artificial intelligence: the integration of probabilistic reasoning with first order logic representations and machine learning" [8]
-
-## Concept Learning
-
-Concepts can be categories, labels (e.g., PROSE extractions), or procedures (e.g., PROSE transformations).
-
-### Classical view (philosophy)
+#### Classical view (philosophy)
 "a process of abstraction, data compression, simplification, and summarization" [2]
 
-### Rule-based
+#### Rules
 - Most have been powered by heuristics, not statistics [2].
 
 ### Prototype
@@ -158,6 +208,10 @@ Exemplar models require two measures [2]:
 ### Explanation-based generalization
 
 ### Bayesian
+
+### Induction (Inductive programming)
+
+- "goes beyond classical machine learning in that the focus lies on learning general programs including loops and recursion, instead of merely (mostly nonrecursive) models or classifiers in restricted representational frameworks, such as decision trees or neural networks." [11]
 
 ## Grammar
 
@@ -236,6 +290,8 @@ This is an argument for innate human knowledge of grammatical rules, since we le
 8. https://people.csail.mit.edu/kersting/ecmlpkdd05_pilp/pilp.pdf
 9. https://en.wikipedia.org/wiki/First-order_logic
 10. http://www.cogsys.wiai.uni-bamberg.de/teaching/ss05/ml/slides/cogsysII-6.pdf
+11. https://link.springer.com/chapter/10.1007/978-3-642-11931-6_3
+12. https://en.wikipedia.org/wiki/Inductive_logic_programming
 
 # Other Helpful Resources Uncited Above
 
