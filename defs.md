@@ -47,22 +47,20 @@ Most famous, oldest author: Aristotle
 - "induction is just the inverse of deduction" [10]
 - "Bottom-up logic" [5]
 - "The process of reaching a general conclusion from specific examples" [1]
+- "generalize a rule from a number of similar observations" [14]
 - intrinsically unsound [11]
 	- adds to but does not replace deductive methods [11]
 - "Inference from particular premises to [a] universal conclusion" [6]
-- conclusions are hypotheses, unprovable without additional stuff [11]
-	- "the most severe objection against IP" [11]
-		- "What is the use of methods whose results cannot be proven correct and possibly deviate from what was intended?" [11]
-		- One answer: "all software development necessarily makes a transition from a first informal and often incomplete problem description by the
-user or customer to a complete and ideally formal specification." [11] This transistion is: [11]
-			-  incapable of formal proof
-			- possibly based on—non-systematic inexplicit generalization
-		- "There is no reason why systematically incorporating existing or easily formulated data by inductive methods should not improve efficiency and even validity of software development" [11]
 - "Process by which a conclusion is inferred from multiple observations" [6]
 - "philosophical (i.e. suggesting a theory to explain observed facts)" not "mathematical (i.e. proving a property for all members of a well-ordered set)"
 
 Connection to ML:
 - "in general, machine learning involves building theories that explain the observed data" [10]
+
+##### Example [14]
+1. (number of similar observations) see dark clouds produce rain many times
+2. (new observation) see dark clouds
+3. (hypothesis) it will rain
 
 ##### Learning from Examples
 
@@ -73,27 +71,43 @@ Connection to ML:
 "Explicit or implicit assumption(s) about what kind of model is wanted." [1]
 
 ##### Inductive Learning Hypothesis
-- "Any hypothesis found to approximate the target function well over a sufficiently large set of training examples will also approximate the target function well over other unobserved examples." [1]
-- "Given some data D and some background knowledge B, learning can be described as generating a hypothesis h that, together with B, explains D." [10]
-	- "the hypothesis H together with the background theory B should cover all positive and none of the negative examples" [8]
-- "a logic program, i.e. a definite clause program" [8]
+
+- hypothesis types
+	- functions
+        - "approximate the target function well over a sufficiently large set of training examples will also approximate the target function well over other unobserved examples." [1]
+    - logic programs or concepts (?)
+    	- a definite clause program [8]
+    	- "a suitable concept in a description space where descriptions are related via generalization/specialization relationships. Examples are at the 'bottom' of the generalization hierarchy." [14]
+    	- "Given some data D and some background knowledge B, learning can be described as generating a hypothesis h that, together with B, explains D." [10]
+    	- Coverage of examples
+	        - "the hypothesis H together with the background theory B should cover all positive and none of the negative examples" [8]
+	        - a suitable concept "covers (generalizes) all positive and none of the negative examples" [14]
+		- [logic] concepts
+			
+				
 
 ##### Hypothesis Correctness
 
-There are two main types of results for inductive inference:
-1. a conclusion [6]
-	- Truth value:
-		- may or may not be true
-		- true ~X% of the time
-		- may only be true when certain preconditions are met
-	- Testing
-		- "Conclusions inferred from multiple observations may be tested by additional observations."
+Conclusions of inductive reasoning process are hypotheses. There are two main types of hypotheses:
+1. a conclusion that results in a boolean value, can be tested on additional observations
+	- may or may not be true
+	- true ~X% of the time
+	- may only be true when certain preconditions are met
 2. a model: 
 	- Examples are generalized into a model that is then used to make predictions on new, previously unseen inputs. 
 	- Learned models may or may not capture what the human in the loop wanted. - Models could be:
 		- a category
 		- a pattern, like the patterns PROSE learns to extract data from large files
 		- a transformation or program, like the transformations Rafazer learns over ASTs
+
+Hypotheses are unprovable without additional stuff [11]
+- "the most severe objection against IP" [11]
+	- "What is the use of methods whose results cannot be proven correct and possibly deviate from what was intended?" [11]
+	- One answer: "all software development necessarily makes a transition from a first informal and often incomplete problem description by the
+user or customer to a complete and ideally formal specification." [11] This transistion is: [11]
+		-  incapable of formal proof
+		- possibly based on—non-systematic inexplicit generalization
+	- "There is no reason why systematically incorporating existing or easily formulated data by inductive methods should not improve efficiency and even validity of software development" [11]
 
 ##### Inductive Logic Programming
 - "a subfield of machine learning" [12]
@@ -143,7 +157,7 @@ Uses
 		- example specifications include: [11]
 			- specific data of a problem—use cases
 			- desirable (and undesirable) behavior of a software
-			- (typical specification type) input/output examples (I/O-examples) of a function or a module interface (a subset of the graph of the function)
+			- (typical specification type) input/output examples (I/O-examples) of a function or a module interface
 				- referred to as *Programming By Examples (PBE)*
 				- variables in I/O examples may be allowed
 				- more tractable than [general] program synthesis because [13] 
@@ -151,11 +165,20 @@ Uses
 					[13]
 					- humans--programmers and non-programmers alike--have an easier time generating examples than logical/relational/complete specifications [13]
 						- but they may not be good at generating many *good* examples [Myers, private conversation]
+						- a great opportunity for HCI to empower the 99% of the billions of users of computational devices who don't know how to program them and struggle with repetitive tasks that could be automated with small scripts [13]
+				- requires [13]
+					- designing a DSL for the application domain
+					- building a synthesis algorithm for it
+					- disambiguating among learned programs using ranking or user interaction
 			- test cases *TODO: how is this not an I/O example?
 			- computation traces of a program for particular inputs *TODO: how is this not a more detailed I/O example?
 		- congruent with many AI problems, which "elude a complete specification at all, e.g., face recognition" aka the knowledge-acquisition bottleneck [11]
 	- Process:
-		- construct a computer program or algorithm
+		- construct a computer program or algorithm out of function primitives [11]
+			- Primitives may be [11]
+				- fixed, predefined functions known to the IPS system
+				- dynamically given as an extra, problem-specific, input
+					- aka 'background knowledge' *TODO: WEIRD NAME. WHY?
 	- Outputs
 		- "a generalization of such an incomplete specification by identifying general patterns in the data" such as [11]
 		-  a more complete specification or an actual implementation of [11]
@@ -202,17 +225,23 @@ since humans have biases that favor certain types of fallacies
 - "starts with an observation then seeks to find the simplest and most likely explanation" [7]
 - "inference to the best explanation" [7]
 - "the use of a known rule to explain an observation [but] can lead to false conclusions if other rules explaining the observation are not taken into account" [7]
+- "choose between several explanations that explain an observation" [14]
 
 ###### Examples
 
-1. Qualified success:
-
-	- (Known rule) if it rains, the grass is wet
-	- (Observation) the grass is wet
-	- (Explanation by abduction) it has rained
-	- (Failure mode 1: not taking other rules into account)
-		- (Other rule) if the sprinklers were recently on, the grass is wet
-		- (Alternative explanation) the sprinklers were recently on
+1. Qualified succes
+	- Example 1:
+		- (Known rule) if it rains, the grass is wet
+		- (Observation) the grass is wet
+		- (Explanation by abduction) it has rained
+		- (Failure mode 1: not taking other rules into account)
+			- (Other rule) if the sprinklers were recently on, the grass is wet
+			- (Alternative explanation) the sprinklers were recently on
+	- Example 2:
+		- (Known rule 1) a broken bulb won't turn on [common]
+		- (Known rule 2) a bulb in a socket that is not receiving any electricity will not turn on [uncommon]
+	    - (Observation) “I flipped the switch, but the light doesn’t turn on."
+	    - (Explanation by abduction) "The bulb must be broken." [the more likely of the two explanations]
 
 2. Failure: affirming the consequent fallacy
 
@@ -339,6 +368,7 @@ This is an argument for innate human knowledge of grammatical rules, since we le
 11. https://link.springer.com/chapter/10.1007/978-3-642-11931-6_3
 12. https://en.wikipedia.org/wiki/Inductive_logic_programming
 13. http://pldi16.sigplan.org/event/tutorials-prose-programming-using-examples
+14. http://ai.vub.ac.be/~ydehauwe/decl_prog/7_InductiveLogicProgramming.pdf
 
 # Other Helpful Resources Uncited Above
 
