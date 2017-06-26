@@ -109,7 +109,14 @@ user or customer to a complete and ideally formal specification." [11] This tran
 		- possibly based on—non-systematic inexplicit generalization
 	- "There is no reason why systematically incorporating existing or easily formulated data by inductive methods should not improve efficiency and even validity of software development" [11]
 
-##### Inductive Logic Programming
+##### Inductive programming (IP)
+- "emerging field" [11]
+- reasoning methods & theory for [11]
+	- computer programming
+	- algorithm design
+	- software development
+
+###### Inductive Logic Programming
 - "a subfield of machine learning" [12]
 - "uses logic programming as a uniform representation for examples, background knowledge and hypotheses" [12]
 - "designed to learn first-order rules" [10]
@@ -121,13 +128,6 @@ user or customer to a complete and ideally formal specification." [11] This tran
 
 Uses
 - "particularly useful in bioinformatics and natural language processing" [12]
-
-##### Inductive programming (IP)
-- "emerging field" [11]
-- reasoning methods & theory for [11]
-	- computer programming
-	- algorithm design
-	- software development
 
 ###### Inductive program synthesis (IPS)
 - "major subfield" of IP [11]
