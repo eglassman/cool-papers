@@ -46,8 +46,18 @@ Most famous, oldest author: Aristotle
 
 - "induction is just the inverse of deduction" [10]
 - "Bottom-up logic" [5]
-- "The process of reaching a general conclusion from specific examples." [1]
+- "The process of reaching a general conclusion from specific examples" [1]
+- intrinsically unsound [11]
+	- adds to but does not replace deductive methods [11]
 - "Inference from particular premises to [a] universal conclusion" [6]
+- conclusions are hypotheses, unprovable without additional stuff [11]
+	- "the most severe objection against IP" [11]
+		- "What is the use of methods whose results cannot be proven correct and possibly deviate from what was intended?" [11]
+		- One answer: "all software development necessarily makes a transition from a first informal and often incomplete problem description by the
+user or customer to a complete and ideally formal specification." [11] This transistion is: [11]
+			-  incapable of formal proof
+			- possibly based on—non-systematic inexplicit generalization
+		- "There is no reason why systematically incorporating existing or easily formulated data by inductive methods should not improve efficiency and even validity of software development" [11]
 - "Process by which a conclusion is inferred from multiple observations" [6]
 - "philosophical (i.e. suggesting a theory to explain observed facts)" not "mathematical (i.e. proving a property for all members of a well-ordered set)"
 
@@ -57,6 +67,7 @@ Connection to ML:
 ##### Learning from Examples
 
 - Examples can be all positive, or a mixture of positive and negative. Negative examples constrain the set of models that are consistent with the examples [1].
+- "if the data at hand is representative then it is likely that identified patterns actually hold in the general case and that, indeed, the induced result meets the general problem" [11]
 
 ##### Inductive bias
 "Explicit or implicit assumption(s) about what kind of model is wanted." [1]
@@ -104,11 +115,13 @@ Uses
 	- algorithm design
 	- software development
 
-###### Inductive program synthesis
+###### Inductive program synthesis (IPS)
 - "major subfield" of IP [11]
+	- started in the 70's [11]
 - "the (semi-)automatic construction of programs from exemplary behavior" [11]
+- HARD problem [13]
 - "not a unified research field until today but scattered over several different established research fields" [11]
-	- spans/intersects with many fields such as [11]
+	- spans/intersects with/been a niche within many fields such as [11]
 		- machine learning
 		- artificial intelligence
 		- programming
@@ -124,6 +137,39 @@ Uses
 				- decision trees
 				- neural networks
 	- these disparate communities (and jargon?) "impedes an exchange of theory and techniques and ... progress of [IP]" [11]
+- Inputs, Process, Outputs
+	- Starting point(s) for IP methods are specific, (knownto-be-)incomplete specifications of a "target" function to be constructed: [11]
+		- incomplete specifications specify behavior for only a small part of the target function's domain [11]
+		- example specifications include: [11]
+			- specific data of a problem—use cases
+			- desirable (and undesirable) behavior of a software
+			- (typical specification type) input/output examples (I/O-examples) of a function or a module interface (a subset of the graph of the function)
+				- referred to as *Programming By Examples (PBE)*
+				- variables in I/O examples may be allowed
+				- more tractable than [general] program synthesis because [13] 
+					- "[automated?] reasoning about concrete input states is much easier than dealing with properties over symbolic program states"
+					[13]
+					- humans--programmers and non-programmers alike--have an easier time generating examples than logical/relational/complete specifications [13]
+						- but they may not be good at generating many *good* examples [Myers, private conversation]
+			- test cases *TODO: how is this not an I/O example?
+			- computation traces of a program for particular inputs *TODO: how is this not a more detailed I/O example?
+		- congruent with many AI problems, which "elude a complete specification at all, e.g., face recognition" aka the knowledge-acquisition bottleneck [11]
+	- Process:
+		- construct a computer program or algorithm
+	- Outputs
+		- "a generalization of such an incomplete specification by identifying general patterns in the data" such as [11]
+		-  a more complete specification or an actual implementation of [11]
+			- function
+			- module
+			- other parts of a program
+			- "actual, executable [synthesized] programs including recursion or loops" [11]
+- Uses [11]
+	- "generate candidate solutions subject to further inspection"
+	- combine "with deductive methods to tackle a problem from the general description as well as from concrete (counter-)instances"
+	- systematize occurring generalizations
+	- check representativeness of example cases provided by the user *TODO: FIND OUT MORE
+	- end-user programming
+	- learning of recursive policies in intelligent agents
 
 ### Statistical
 
@@ -292,6 +338,7 @@ This is an argument for innate human knowledge of grammatical rules, since we le
 10. http://www.cogsys.wiai.uni-bamberg.de/teaching/ss05/ml/slides/cogsysII-6.pdf
 11. https://link.springer.com/chapter/10.1007/978-3-642-11931-6_3
 12. https://en.wikipedia.org/wiki/Inductive_logic_programming
+13. http://pldi16.sigplan.org/event/tutorials-prose-programming-using-examples
 
 # Other Helpful Resources Uncited Above
 
