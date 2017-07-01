@@ -14,6 +14,10 @@ Can refer to: [6]
 	- "A predicate takes an entity or entities in the domain of discourse as input and outputs either True or False. Consider the two sentences "Socrates is a philosopher" and "Plato is a philosopher". In propositional logic, these sentences are viewed as being unrelated and might be denoted, for example, by variables such as p and q. The predicate "is a philosopher" occurs in both sentences, which have a common structure of "a is a philosopher". The variable a is instantiated as "Socrates" in the first sentence and is instantiated as "Plato" in the second sentence. While first-order logic allows for the use of predicates, such as "is a philosopher" in this example, propositional logic does not."
 	- "PROLOG programs are sets of first-order rules" [10]
 
+Validity across different reasoning methods
+- "An inference is deductively valid if and only if there is no possible situation in which all the premises are true but the conclusion false." [15]
+- "An inference is inductively strong if and only if its premises give some degree of probability to its conclusion." [15]
+
 #### Deductive
 
 - "Top-down logic" [5]
@@ -158,7 +162,7 @@ Uses
 			- specific data of a problem—use cases
 			- desirable (and undesirable) behavior of a software
 			- (typical specification type) input/output examples (I/O-examples) of a function or a module interface
-				- referred to as *Programming By Examples (PBE)*
+				- referred to as *Programming By Examples (PBE)* or *Programming By Demonstration (PBD)*
 				- variables in I/O examples may be allowed
 				- more tractable than [general] program synthesis because [13] 
 					- "[automated?] reasoning about concrete input states is much easier than dealing with properties over symbolic program states"
@@ -199,13 +203,19 @@ Uses
 - Mathematical methods for drawing "conclusions in the presence of uncertainty" [6]
 - A generalization of deterministic reasoning [6]
 
-#### Probabilistic inductive logic programming / probabilistic logic learning / statistical relational learning 
+#### Probabilistic Programming
+
+- aims to "export" powerful PL concepts like abstraction and reuse to statistical modeling [16]
+
+##### Probabilistic inductive logic programming / probabilistic logic learning / statistical relational learning 
 
 "addresses one of the central questions of artificial intelligence: the integration of probabilistic reasoning with first order logic representations and machine learning" [8]
 
 ### Human
 
 "how humans draw conclusions" [6]
+
+See Brenden Lake's work
 
 #### Fields where primary and secondary research occur [6]
 1. Primary: Studied in cognitive psychology
@@ -369,6 +379,8 @@ This is an argument for innate human knowledge of grammatical rules, since we le
 12. https://en.wikipedia.org/wiki/Inductive_logic_programming
 13. http://pldi16.sigplan.org/event/tutorials-prose-programming-using-examples
 14. http://ai.vub.ac.be/~ydehauwe/decl_prog/7_InductiveLogicProgramming.pdf
+15. https://en.wikipedia.org/wiki/Logic_and_rationality
+16. https://www.cs.cornell.edu/courses/cs4110/2016fa/lectures/lecture33.html
 
 # Other Helpful Resources Uncited Above
 
