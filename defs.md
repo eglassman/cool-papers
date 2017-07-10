@@ -198,6 +198,11 @@ Uses
 	- end-user programming
 	- learning of recursive policies in intelligent agents
 
+#### Transductive
+
+- reasoning from observed, specific (training) cases to specific (test) cases [17]
+	- not reasoning from observed training cases to general rules, which are then applied to the test cases [17]
+
 ### Statistical
 
 - Mathematical methods for drawing "conclusions in the presence of uncertainty" [6]
@@ -381,6 +386,7 @@ This is an argument for innate human knowledge of grammatical rules, since we le
 14. http://ai.vub.ac.be/~ydehauwe/decl_prog/7_InductiveLogicProgramming.pdf
 15. https://en.wikipedia.org/wiki/Logic_and_rationality
 16. https://www.cs.cornell.edu/courses/cs4110/2016fa/lectures/lecture33.html
+17. https://en.wikipedia.org/wiki/Transduction_(machine_learning)
 
 # Other Helpful Resources Uncited Above
 
