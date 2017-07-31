@@ -299,6 +299,13 @@ Exemplar models require two measures [2]:
 
 ### Bayesian
 
+#### Monte Carlo methods
+"The basic principle underlying Monte Carlo methods is to approximate a probability distribution using only a finite set of samples from that distribution." [18]
+
+##### Importance Sampling
+
+##### Particle Filtering
+
 ### Induction (Inductive programming)
 
 - "goes beyond classical machine learning in that the focus lies on learning general programs including loops and recursion, instead of merely (mostly nonrecursive) models or classifiers in restricted representational frameworks, such as decision trees or neural networks." [11]
@@ -356,6 +363,9 @@ Most rules of lexical grammars are context-free, with a few exceptions, e.g., "c
 
 ### Grammar induction
 
+#### Recent HCI-relevant papers
+1. "Learning Design Patterns with Bayesian Grammar Induction" @ UIST '12 http://graphics.stanford.edu/~lfyg/gi.pdf
+
 ### Unsupervised parsing
 
 ## Version space
@@ -387,6 +397,7 @@ This is an argument for innate human knowledge of grammatical rules, since we le
 15. https://en.wikipedia.org/wiki/Logic_and_rationality
 16. https://www.cs.cornell.edu/courses/cs4110/2016fa/lectures/lecture33.html
 17. https://en.wikipedia.org/wiki/Transduction_(machine_learning)
+18. https://escholarship.org/uc/item/3k26g6wn#page-1 : Exploring the influence of particle filter parameters on order effects in causal learning
 
 # Other Helpful Resources Uncited Above
 
