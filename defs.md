@@ -18,6 +18,26 @@ Validity across different reasoning methods
 - "An inference is deductively valid if and only if there is no possible situation in which all the premises are true but the conclusion false." [15]
 - "An inference is inductively strong if and only if its premises give some degree of probability to its conclusion." [15]
 
+#### Types [22]
+
+- Formal logic: inference with purely formal content, i.e., expressed as a particular application of a wholly abstract rule that is not about any particular thing or property 
+- Symbolic logic: symbolic abstractions that capture formal logic
+	- propositional logic
+	- predicate/first-order logic (extension of propositional logic) [23]
+		- unlike propositional logic, uses quantifiers or relations, e.g., "there exists"
+		- cannot describe structures with an infinite domain, e.g., natural numbers or the real line, which requires second-order logic
+	- second-order logic (extension of first order logic) [24]
+		- quantifies over relations
+- Mathematical logic: extenstion of symbolic logic for mathematical domain
+	- Boolean algebra
+		- variables are true or false
+		- 'and' is conjunction
+		- 'or' is disjunction
+		- common forms
+			- general boolean formulas (more concise, perhaps more interpretable [25])
+			- disjunctive normal form (sum of products)
+
+
 #### Deductive
 
 - "Top-down logic" [5]
@@ -86,9 +106,7 @@ Connection to ML:
     	- Coverage of examples
 	        - "the hypothesis H together with the background theory B should cover all positive and none of the negative examples" [8]
 	        - a suitable concept "covers (generalizes) all positive and none of the negative examples" [14]
-		- [logic] concepts
-			
-				
+		- [logic] concepts			
 
 ##### Hypothesis Correctness
 
@@ -113,6 +131,14 @@ user or customer to a complete and ideally formal specification." [11] This tran
 		- possibly based on—non-systematic inexplicit generalization
 	- "There is no reason why systematically incorporating existing or easily formulated data by inductive methods should not improve efficiency and even validity of software development" [11]
 
+##### Hypothesis testing & Reducing uncertainty
+
+Testing strategies:
+- positive testing strategy (PTS)
+- negative testing strategy (NTS)
+
+"PTS is more likely to yield falsification and optimally reduces uncertainty provided the world is inherently deterministic (i.e., given the rule is true, there is only one possible next outcome)." [19]
+
 ##### Inductive programming (IP)
 - "emerging field" [11]
 - reasoning methods & theory for [11]
@@ -134,8 +160,7 @@ Uses
 - "particularly useful in bioinformatics and natural language processing" [12]
 
 ###### Inductive program synthesis (IPS)
-- "major subfield" of IP [11]
-	- started in the 70's [11]
+- "major subfield" of IP started in the 70's [11]
 - "the (semi-)automatic construction of programs from exemplary behavior" [11]
 - HARD problem [13]
 - "not a unified research field until today but scattered over several different established research fields" [11]
@@ -208,6 +233,26 @@ Uses
 - Mathematical methods for drawing "conclusions in the presence of uncertainty" [6]
 - A generalization of deterministic reasoning [6]
 
+#### Probabilistic Modeling
+
+Strengths: [28]
+- Knows when it doesn't know
+- "automatic model complexity control and structure learning (Bayesian Occam's Razor)"
+
+- Models describe data that could be observed from a system [28]
+- inverse probability rule (Bayes Rule):
+	- P(hypothesis | data) = [ P(hypothesis)*P(data|hypothesis) ] / [ Sum of P(hypothesis)*P(data|hypothesis) for all hypotheses ]
+	- dictates inferences, specifically inferences about "hypotheses (uncertain quantities) from data (measured quantities)" [28]
+		- about hypotheses (which hypothesis is more likely, given the data)
+		- how to update the model itself, where the model parameters are the hypothesis
+			- P(model parameters | data, model) = [ P(data | model parameters, model) * P(model parameters | model) ] / P(data | model)
+		- make predictions
+			- P(x|data, model) = Sum of P(x|data, model, model parameters)*P(model paramters|data, model) for all model parameters
+			- question: how do you get all those terms?
+		- learn from data
+			- P(model | data) = P(data | model)P(model) / P(data)
+			- Question: what if you don't know P(data)? How do people reasonably approximate that?
+
 #### Probabilistic Programming
 
 - aims to "export" powerful PL concepts like abstraction and reuse to statistical modeling [16]
@@ -218,22 +263,80 @@ Uses
 
 ### Human
 
-"how humans draw conclusions" [6]
+TODO: See Brenden Lake's work
 
-See Brenden Lake's work
+"how humans draw conclusions" [6]
 
 #### Fields where primary and secondary research occur [6]
 1. Primary: Studied in cognitive psychology
 2. Secondary: Automated inference systems that *emulate* human inference are studied/composed in AI
 
-#### Informal and Incorrect Logic (Fallacies)
+#### Things humans learn
+
+- attributes (features)
+- grammars (rules for parsing input)
+- categories
+- programs
+	- concepts: defined by [27] as "simple probabilistic programs", i.e., "probabilistic generative models epxressed as structured procedures in an abstract description language"
+
+#### Feature learning
+
+"Experts identify parts of objects in their domain of expertise vastly differently than novices (e.g., [3]), and evidence for flexible feature sets has been found in many laboratory experiments (see [2] for a review)." [20]
+
+#### Concept learning
+
+- "How do people learn new concepts from just one or a few examples?" [27]
+- "How do people learn such abstract, rich, and flexible representations?" [27]
+
+"For any theory of learning [27's 4, 27's 14–16], fitting a more complicated model requires more data, not less, in order to achieve some measure of good generalization... Nonetheless, people seem to navigate this trade-off with remarkable agility, learning rich concepts that generalize well from sparse data." [27]
+
+"People learning new concepts can often generalize successfully from just a single example" [27]
+
+1. "people may only need to see one example of a novel two-wheeled vehicle in order to grasp the boundaries of the new concept" [27]
+2. "people learn richer representations than machines... even for simple concepts" which are used by people to [27]
+	- create new exemplars [27's 10]
+	- parse objects into parts and relations
+	- create new abstract categories of objects based on existing categories [27's 12, 27's 13]
+
+##### Bayesian program [concept] learning (BPL)
+
+"capable of learning a large class of visual concepts from just a single example and generalizing in ways that are mostly indistinguishable from people"
+
+#### Order matters
+
+"It is a common finding that the order in which people receive information has an effect on their subsequent judgments and inferences (Dennis & Ahn, 2001;
+Collins & Shanks, 2002). This poses a problem for rational models based on Bayesian inference as the process of updating hypotheses in these models is typically invariant to the order in which the data are presented." [18]
+
+##### primacy effects
+
+"initial observations have an overly strong influence on people’s conclusions" [18]
+
+##### recency effects
+
+"being more influenced by more recent observations" [18]
+
+#### Known Characteristics
+
+##### Testing hypotheses
+
+Using PTS to test hypotheses is optimal if "the world is deterministic" and humans use PTS "as the result of an assumption of determinism on the part of human learners, consistent with recent results showing that children assume that many causal relationships are deterministic (e.g., Schulz & Sommerville, 2006; Gelman, Coley, & Gottfried, 1994)" [19].
+
+###### Confirmation Bias
+
+Defined as "the general human tendency to interpret and seek evidence fitting their current theory differently from evidence against it (Klayman & Ha, 1987)." [19]
+
+"Classic analyses of hypothesis testing assume that people should pick the test with the largest probability of falsifying their current hypothesis, while experiments have shown that people tend to select tests consistent with that hypothesis." [19]
+
+##### Informal and Incorrect Logic (Fallacies)
+
+TODO: FINISH READING BAD ARGUMENTS
 
 Catalogued by: [6]
 	- cognitive psychologists
 	- philosophers
 since humans have biases that favor certain types of fallacies
 
-##### abductive
+###### abductive
 
 *"formally equivalent to the logical fallacy of affirming the consequent"* [7]
 
@@ -242,8 +345,7 @@ since humans have biases that favor certain types of fallacies
 - "the use of a known rule to explain an observation [but] can lead to false conclusions if other rules explaining the observation are not taken into account" [7]
 - "choose between several explanations that explain an observation" [14]
 
-###### Examples
-
+*Examples*
 1. Qualified succes
 	- Example 1:
 		- (Known rule) if it rains, the grass is wet
@@ -264,10 +366,37 @@ since humans have biases that favor certain types of fallacies
 	- (Observation) Bill Gates is rich
 	- (Explanation by abduction) Bill Gates owns Fort Knox [clearly false]
 
-###### Uses
+*Uses*
 - Employed frequently by diagnostic expert systems
 
 ## Machine Learning
+
+### Feature learning
+
+#### Representation is nearly everything
+- "Almost all successful machine learning algorithms and cognitive models require powerful representations capturing the features that are relevant to a particular problem." [20]
+- "forming an appropriate representation is a fundamental issue for applying machine learning algorithms." [20]
+    - "early work demonstrating XOR is only learnable by a linear classifier with the right representation [4]"
+    - the kernel trick in support vector machines [20's 5]
+
+#### Fixed features
+
+"Most accounts of the processes underlying human learning, decision-making, and perception assume that stimuli have fixed sets of features. For example, traditional accounts of category learning start with a set of features (e.g., is furry and barks), which are used to learn categories (e.g., dogs). In a sense, features are the basic atoms for these processes." [20]
+
+#### Non-fixed features
+
+Can "use distributional and category information to infer feature representations" [20]
+
+##### nonparametric Bayesian statistics
+
+Assumes "that the observed data manifest a subset of an unbounded amount of latent structure" [21]
+
+##### Indian Buffett Process
+
+"objects are represented using an unknown number of latent features" [21]
+
+"The Indian buffet process can also be used to define a prior distribution in any setting where the latent structure expressed in data can be expressed in the form of a binary matrix with a finite number of rows and infinite number of columns, such as the adjacency matrix of a bipartite graph where one class of nodes is of unknown size, or the adjacency matrix for a Markov process with an unbounded set of states." [21]
+- Research question: can this representation represent code?
 
 ### Category Learning
 
@@ -287,7 +416,7 @@ Assumptions [2]:
 
 See "Prototypical Networks for Few-shot Learning" https://arxiv.org/pdf/1703.05175.pdf
 
-### Exemplar
+#### Exemplar
 Assumptions [2]:
 - people "store examples verbatim."
 
@@ -306,11 +435,17 @@ Exemplar models require two measures [2]:
 
 ##### Particle Filtering
 
-### Induction (Inductive programming)
+### Program Induction
 
-- "goes beyond classical machine learning in that the focus lies on learning general programs including loops and recursion, instead of merely (mostly nonrecursive) models or classifiers in restricted representational frameworks, such as decision trees or neural networks." [11]
+"goes beyond classical machine learning in that the focus lies on learning general programs including loops and recursion, instead of merely (mostly nonrecursive) models or classifiers in restricted representational frameworks, such as decision trees or neural networks." [11]
 
-## Grammar
+Approaches [26]
+- Connectionist
+	- Neural Turing Machine
+- Symbolic
+	- Hierarchical Bayesian Program Learning
+
+## Grammars
 
 - for human languages [3]: 
 	- "The grammars of human languages produce hierarchical tree structures." 
@@ -378,6 +513,13 @@ Most rules of lexical grammars are context-free, with a few exceptions, e.g., "c
 
 This is an argument for innate human knowledge of grammatical rules, since we learn correct grammar from what linguists & cognitive psychologists believe is a poverty of examples.
 
+## Domain-specific languages
+
+## Human-machine communication
+
+TODO: add Been's work on using examples as a medium
+TODO: add edupsych work on inducing good mental models by choosing strategically diverse examples as a medium
+
 # References
 
 1. http://www2.cs.uregina.ca/~dbd/cs831/notes/ml/2_inference.html
@@ -398,6 +540,16 @@ This is an argument for innate human knowledge of grammatical rules, since we le
 16. https://www.cs.cornell.edu/courses/cs4110/2016fa/lectures/lecture33.html
 17. https://en.wikipedia.org/wiki/Transduction_(machine_learning)
 18. https://escholarship.org/uc/item/3k26g6wn#page-1 : Exploring the influence of particle filter parameters on order effects in causal learning
+19. https://escholarship.org/uc/item/6n60k9zn : A Rational Analysis of Confirmation with Deterministic Hypotheses
+20. http://papers.nips.cc/paper/3621-analyzing-human-feature-learning-as-nonparametric-bayesian-inference.pdf
+21. https://cocosci.berkeley.edu/tom/papers/indianbuffet.pdf : The Indian Buffet Process: An Introduction and Review
+22. https://en.wikipedia.org/wiki/Logic
+23. https://en.wikipedia.org/wiki/First-order_logic
+24. https://en.wikipedia.org/wiki/Second-order_logic
+25. http://da.qcri.org/jquiane/jorgequianeFiles/papers/sigmod17c.pdf : Generating Concise Entity Matching Rules
+26. http://papers.nips.cc/paper/6082-sampling-for-bayesian-program-learning.pdf
+27. https://www.cs.cmu.edu/~rsalakhu/papers/LakeEtAl2015Science.pdf
+28. http://www.nasonline.org/programs/sackler-forum/frontiers-of-machine-learning/ghahramani-ppt.pdf 
 
 # Other Helpful Resources Uncited Above
 
