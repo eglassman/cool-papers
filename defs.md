@@ -235,11 +235,13 @@ Uses
 
 #### Probabilistic Modeling
 
+- Models describe data that could be observed from a system [28]
+
 Strengths: [28]
 - Knows when it doesn't know
 - "automatic model complexity control and structure learning (Bayesian Occam's Razor)"
 
-- Models describe data that could be observed from a system [28]
+
 - inverse probability rule (Bayes Rule):
 	- P(hypothesis | data) = [ P(hypothesis)*P(data|hypothesis) ] / [ Sum of P(hypothesis)*P(data|hypothesis) for all hypotheses ]
 	- dictates inferences, specifically inferences about "hypotheses (uncertain quantities) from data (measured quantities)" [28]
@@ -297,6 +299,16 @@ TODO: See Brenden Lake's work
 	- create new exemplars [27's 10]
 	- parse objects into parts and relations
 	- create new abstract categories of objects based on existing categories [27's 12, 27's 13]
+
+todo: keep reading [27]
+
+#### Learning of similarity functions and rules
+
+"abstracting rules and computing similarity to exemplars ... should both be seen as special cases of a more general Bayesian learning framework" [29]
+
+"In domains ranging from reasoning to language acquisition, a broad view is emerging of
+cognition as a hybrid of two distinct modes of computation, one based on applying abstract
+rules and the other based on assessing similarity to stored exemplars [7]." [29]
 
 ##### Bayesian program [concept] learning (BPL)
 
@@ -444,6 +456,9 @@ Approaches [26]
 	- Neural Turing Machine
 - Symbolic
 	- Hierarchical Bayesian Program Learning
+		- Lake et al.'s Science paper
+		- Percy Liang's Learning Programs [30]
+			- 
 
 ## Grammars
 
@@ -489,12 +504,41 @@ The predominant 'technology' for describing programming syntax; can describe mor
 
 Context-free grammars "require no looking back or ahead, or backtracking, which allows a simple, clean, and efficient implementation." [4]
 
+From [31]:
+A context-free grammar (CFG) is a 4-tuple G = (N, Σ, R, S) where:
+
+• N is a finite set of non-terminal symbols.
+	- In English, N specifies basic syntactic categories: for example NP for “noun phrase”, VP for “verb phrase”, and includes the start symbol S which stands for “sentence” 
+• Σ is a finite set of terminal symbols.
+	- The set Σ contains the set of words in the vocabulary.
+• R is a finite set of rules of the form X → Y1Y2 . . . Yn, where X ∈ N, n ≥ 0,
+and Yi ∈ (N ∪ Σ) for i = 1 . . . n.
+	- In English, these might be
+		- S → NP VP
+		- NN → man
+	- There are unary rules
+		- NN → man
+		- S → VP
+	- There are rules with mixtures of terminals and non-terminals: 
+		- VP → John Vt Mary
+		- NP → the NN
+	- Rules that end in terminals, like the empty string
+		- VP → e
+• S ∈ N is a distinguished start symbol.
+	- In English, this would be a sentence. Every parse tree has S as its root.
+
+ 
+
 #### Lexical grammars [4]
 Lexers (also called tokenizers) use lexical grammars to convert a sequence of characters into a sequence of tokens with identified meanings.
 
 Relationship with parsers: "A lexer is generally combined with a parser, which together analyze the syntax of programming languages, web pages, and so forth."
 
 Most rules of lexical grammars are context-free, with a few exceptions, e.g., "concatenation of consecutive string literals in Python, which requires holding one token in a buffer before emitting it (to see if the next token is another string literal)."
+
+#### Probabilistic
+
+
 
 ### Grammar induction
 
@@ -550,6 +594,9 @@ TODO: add edupsych work on inducing good mental models by choosing strategically
 26. http://papers.nips.cc/paper/6082-sampling-for-bayesian-program-learning.pdf
 27. https://www.cs.cmu.edu/~rsalakhu/papers/LakeEtAl2015Science.pdf
 28. http://www.nasonline.org/programs/sackler-forum/frontiers-of-machine-learning/ghahramani-ppt.pdf 
+29. http://papers.nips.cc/paper/1666-rules-and-similarity-in-concept-learning.pdf
+30. https://cs.stanford.edu/~pliang/papers/programs-icml2010.pdf
+31. http://www.cs.columbia.edu/~mcollins/courses/nlp2011/notes/pcfgs.pdf : Probabilistic Context-Free Grammars (PCFGs) by Michael Collins
 
 # Other Helpful Resources Uncited Above
 
