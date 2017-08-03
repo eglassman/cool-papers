@@ -527,7 +527,23 @@ and Yi ∈ (N ∪ Σ) for i = 1 . . . n.
 • S ∈ N is a distinguished start symbol.
 	- In English, this would be a sentence. Every parse tree has S as its root.
 
- 
+#### Probabilistic
+
+"a natural generalization of context-free grammars" [31]
+
+"The key idea in probabilistic context-free grammars is to extend our definition
+to give a probability distribution over possible derivations." [31]
+
+From [31]:
+Given a context-free grammar G, we will use the following definitions:
+• TG is the set of all possible left-most derivations (parse trees) under the grammar
+G.
+• For any derivation t ∈ TG, yield(t) is the sequence of words in t: s ∈ Σ∗
+• For a given sentence s ∈ Σ∗, TG(s) is the set of possible parse trees for s. Mathematically, TG(s) is {t : t ∈ TG, yield(t) = s}
+• We say that a sentence s is ambiguous if it has more than one parse tree, i.e.,
+|TG(s)| > 1.
+• We say that a sentence s is grammatical if it has at least one parse tree, i.e.,
+|TG(s)| > 0.
 
 #### Lexical grammars [4]
 Lexers (also called tokenizers) use lexical grammars to convert a sequence of characters into a sequence of tokens with identified meanings.
@@ -536,9 +552,29 @@ Relationship with parsers: "A lexer is generally combined with a parser, which t
 
 Most rules of lexical grammars are context-free, with a few exceptions, e.g., "concatenation of consecutive string literals in Python, which requires holding one token in a buffer before emitting it (to see if the next token is another string literal)."
 
-#### Probabilistic
+[31]: "We will find a way to define a distribution over parse trees, p(t), such that for any t ∈ TG:"
+• p(t) ≥ 0 such that 
+• the p(t) of all t in TG sum to 1
 
+That means the probability of each branch in a set of branches from a common root must sum to 1.
 
+##### Learning PCFG from corpuses [31]
+
+training data: a set of parse trees t1, t2, . . . , tm. The induced PCFG (N, Σ, S, R, q) is:
+• N: the set of all non-terminals seen in the trees t1-tm.
+• Σ: the set of all words seen in the trees t1-tm.
+• S: the same root that all trees t1-tm share.
+• R: the set of all rules α → β seen in the trees t1-tm.
+• The maximum-likelihood parameter estimates are:
+qML(α → β) = Count(α → β) / Count(α)
+where Count(α → β) is the number of times that the rule α → β is seen in the trees t1-tm, and Count(α) is the number of times the non-terminal α is seen in the trees t1-tm. For example:
+	- if the rule VP → Vt NP is seen 105 times in our corpus and
+	- the non-terminal VP is seen 1000 times, then
+	- q(VP → Vt NP) = 105 / 1000
+
+##### Limits
+
+Does not capture the fact that choices in one branch could affect the probability of choices in another branch
 
 ### Grammar induction
 
