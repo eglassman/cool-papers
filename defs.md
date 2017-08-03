@@ -78,6 +78,21 @@ Most famous, oldest author: Aristotle
 - "Process by which a conclusion is inferred from multiple observations" [6]
 - "philosophical (i.e. suggesting a theory to explain observed facts)" not "mathematical (i.e. proving a property for all members of a well-ordered set)"
 
+1. two classic inductive inference paradigms: [32]
+- rule-based: "hypothesis testing in a constrained space of possible rules"
+- similarity-based: "computing similarity to the observed examples"
+2. one non-classic (Bayesian) inductive inference paradigm [32]. 
+	- "hypothesis averaging allows the Bayesian framework to accomodate both rule-like and similarity-like generalization behavior, depending on how peaked the posterior probability is."
+	- It has three pieces:
+		- "a prior probability distribuion over a hypothesis space of possible concepts"
+		- "a likelihood function, which scores each hypothesis according to its probability of generating the observed examples"
+			- "The likelihood, under the assumption of randomly sampled positive examples, embodies the size principle for scoring hypotheses: smaller consistent hypotheses are more likely than larger hypotheses, and they become exponentially more likely as the number of observed examples increases."
+		- "the principle of hypothesis averaging"
+			- computing the "probability of generalizing a concept to new objects by averaging the predictions of all hypotheses weighted by their posterior probability (proportional to the product of their priors and likelihoods)"
+	- two principles (size and hypothesis averaging) predict "a convergence from 
+		- "similarity-like generalization (due to a broad posterior distribution) after very few examples are observed" to 
+		- "rule-like generalization (due to a sharply peaked posterior distribution) after sufficiently many examples have been observed."
+
 Connection to ML:
 - "in general, machine learning involves building theories that explain the observed data" [10]
 
@@ -269,6 +284,8 @@ TODO: See Brenden Lake's work
 
 "how humans draw conclusions" [6]
 
+"The ability to learn concepts from examples is a central aspect of human cognition." [32]
+
 #### Fields where primary and secondary research occur [6]
 1. Primary: Studied in cognitive psychology
 2. Secondary: Automated inference systems that *emulate* human inference are studied/composed in AI
@@ -287,6 +304,19 @@ TODO: See Brenden Lake's work
 
 #### Concept learning
 
+"Human concept learning presents a version of the classic problem of induction, which
+is made particularly difficult by the combination of two requirements:
+	- the need to *learn from a rich (i.e. nested and overlapping) vocabulary* of possible concepts and
+	- the need to be able to *generalize* concepts reasonably from only a few positive examples." [32]
+For example:
+	- in a simple number concept game, [32]
+		- "human learners can, with reasonable confidence, lock in on one out of a billion billion billion logically possible concepts, after seeing only four positive examples"
+		- "and can generalize informatively after seeing just a single example"
+		- This is not captured by either of the following two classic inductive inference paradigms:
+			- "hypothesis testing in a constrained space of possible rules"
+			- "computing similarity to the observed examples"
+
+
 - "How do people learn new concepts from just one or a few examples?" [27]
 - "How do people learn such abstract, rich, and flexible representations?" [27]
 
@@ -304,11 +334,11 @@ todo: keep reading [27]
 
 #### Learning of similarity functions and rules
 
-"abstracting rules and computing similarity to exemplars ... should both be seen as special cases of a more general Bayesian learning framework" [29]
+"abstracting rules and computing similarity to exemplars ... should both be seen as special cases of a more general Bayesian learning framework... [In other words,] rules and similarity are best seen as two ends of a continuum of possible concept representations." [29]
 
 "In domains ranging from reasoning to language acquisition, a broad view is emerging of
 cognition as a hybrid of two distinct modes of computation, one based on applying abstract
-rules and the other based on assessing similarity to stored exemplars [7]." [29]
+rules and the other based on assessing similarity to stored exemplars [29's 7]." [29]
 
 ##### Bayesian program [concept] learning (BPL)
 
@@ -633,6 +663,7 @@ TODO: add edupsych work on inducing good mental models by choosing strategically
 29. http://papers.nips.cc/paper/1666-rules-and-similarity-in-concept-learning.pdf
 30. https://cs.stanford.edu/~pliang/papers/programs-icml2010.pdf
 31. http://www.cs.columbia.edu/~mcollins/courses/nlp2011/notes/pcfgs.pdf : Probabilistic Context-Free Grammars (PCFGs) by Michael Collins
+32. https://dspace.mit.edu/bitstream/handle/1721.1/16714/42471842-MIT.pdf?sequence=2 : Tenenbaum's PhD thesis
 
 # Other Helpful Resources Uncited Above
 
